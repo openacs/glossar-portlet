@@ -39,7 +39,7 @@ namespace eval glossar_portlet {
 
     ad_proc -public get_pretty_name {
     } {
-        return "Glossar Portlet"
+        return "#glossar-portlet.glossar_portlet_pretty_name#"
     }
 
     ad_proc -public link {
@@ -118,7 +118,6 @@ namespace eval glossar_portlet {
             -package_key [my_package_key] \
             -config_list $cf \
 	    -template_src glossar-list
-	
     }
 
 }

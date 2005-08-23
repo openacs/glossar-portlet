@@ -7,7 +7,7 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
     
-    <version name="0.1d" url="http://openacs.org/repository/download/apm/glossar-portlet-0.1d.apm">
+    <version name="0.1d1" url="http://openacs.org/repository/download/apm/glossar-portlet-0.1d1.apm">
         <owner url="mailto:kiesbye@theservice.de">bjoern kiesbye</owner>
         <owner url="mailto:sussdorff@sussdorff.org">Malte Sussdorff</owner>
         <summary>Intigrates the Glossar Package into a Portal</summary>
@@ -15,7 +15,7 @@
         <description format="text/html">Intigrates the Glossar Package into a Portal</description>
         <maturity>0</maturity>
 
-        <provides url="glossar-portlet" version="0.1d"/>
+        <provides url="glossar-portlet" version="0.1d1"/>
         <requires url="glossar" version="0.3d"/>
 
         <callbacks>

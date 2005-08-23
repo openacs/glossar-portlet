@@ -28,6 +28,8 @@ set owner_ids [list]
 set community_id [dotlrn_community::get_community_id_from_url]
 set customer_id [application_data_link::get_linked   -from_object_id $community_id   -to_object_type "organization" ]
 
+ad_return_complaint 1 "$customer_id"
+
 ns_log notice "custommer_id(s) $customer_id"
 lappend owner_ids $customer_id
 

@@ -1,1 +1,1 @@
-<include src=/packages/glossar/lib/glossar-portlet-list owner_ids="@owner_ids@" gl_orderby=@gl_orderby@ gl_customer_id=@gl_customer_id@ gl_format=@gl_format@></include>
+<include src="../lib/glossar-portlet-list" owner_ids="@owner_ids@" gl_orderby=@gl_orderby@ gl_customer_id=@gl_customer_id@ gl_format=@gl_format@></include>
