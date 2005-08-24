@@ -81,7 +81,6 @@ set row_list [list name title description source_category target_category glossa
 # Just check permission on the first owner_id (the current customer) 
 set no_perm_p 0
 
-ad_return_complaint 1 $customer_id
 
 if [permission::permission_p -object_id $customer_id -privilege admin] {
 
