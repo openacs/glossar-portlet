@@ -7,15 +7,16 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
     
-    <version name="0.1d1" url="http://openacs.org/repository/download/apm/glossar-portlet-0.1d1.apm">
+    <version name="0.1d2" url="http://openacs.org/repository/download/apm/glossar-portlet-0.1d2.apm">
         <owner url="mailto:kiesbye@theservice.de">bjoern kiesbye</owner>
         <owner url="mailto:sussdorff@sussdorff.org">Malte Sussdorff</owner>
         <summary>Intigrates the Glossar Package into a Portal</summary>
+        <release-date>2005-08-31</release-date>
         <vendor url="http://www.cognovis.de">Cognovis</vendor>
         <description format="text/html">Intigrates the Glossar Package into a Portal</description>
         <maturity>0</maturity>
 
-        <provides url="glossar-portlet" version="0.1d1"/>
+        <provides url="glossar-portlet" version="0.1d2"/>
         <requires url="glossar" version="0.3d"/>
 
         <callbacks>
