@@ -62,6 +62,8 @@
                 cr_items ci
         where
                 ci.parent_id = :glossar_id
+		and ci.content_type != 'gl_glossar_term'		
+
    </querytext>
 </fullquery>
 
