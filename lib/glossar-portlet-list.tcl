@@ -35,6 +35,9 @@ if [empty_string_p "[ad_conn user_id]"] {
 
 set customer_id [lindex  $owner_ids 0]
 set where_etat_ids [join [lrange $owner_ids 1 [llength $owner_ids]] "','" ] 
+if {[empty_string_p $where_etat_ids] } {
+    set where_etat_ids 0
+}
 set actions ""
 ns_log notice "WHERE $where_etat_ids , owner $customer_id "
 
@@ -112,7 +115,7 @@ template::list::create \
     -pass_properties {customer_id owner_ids edit_link } \
     -elements {
 	name {
-	    label {[_ glossar.Organization_Name]}
+	    label {[_ glossar.Organization_name]}
 	    display_template "<a href=\"@gl_glossar_portlet.new_glossar@\">@gl_glossar_portlet.name@</a>"
         }
 	title {
@@ -132,7 +135,7 @@ template::list::create \
 	    display_template "<a href=\"@gl_glossar_portlet.edit_url@\">[_ acs-kernel.common_Edit]</a>"
 	}	
 	glossar_files {
-	    display_template "<a href=\"@gl_glossar_portlet.files_url@\">[_ glossar.Files]</a>"
+	    display_template "<a href=\"@gl_glossar_portlet.files_url@\">[_ glossar.Files]</a> (@gl_glossar_portlet.files_count@)"
 	}	
 
     } -actions $actions -sub_class narrow \
@@ -157,7 +160,7 @@ template::list::create \
 
 set static_customer_id $customer_id
 
-db_multirow -extend {source_category target_category gl_translation_p glossar_edit glossar_files files_url edit_url title_url new_glossar} gl_glossar_portlet gl_glossar_portlet  {} {
+db_multirow -extend {source_category target_category gl_translation_p glossar_edit glossar_files files_url edit_url title_url new_glossar files_count } gl_glossar_portlet gl_glossar_portlet  {} {
     if {![empty_string_p $target_category_id]} {
 	set gl_translation_p 1
     } else {
@@ -165,6 +168,7 @@ db_multirow -extend {source_category target_category gl_translation_p glossar_ed
     }
     set glossar_edit "[_ glossar.glossar_Edit]"
     set glossar_files "[_ glossar.files]"
+    set files_count [db_string get_files_count { } -default 0]
     set source_category "[category::get_name $source_category_id]"
     set target_category "[category::get_name $target_category_id]"
     set title_url "[export_vars -base "${base_url}/glossar-term-list" {glossar_id gl_translation_p customer_id owner_id}]"
