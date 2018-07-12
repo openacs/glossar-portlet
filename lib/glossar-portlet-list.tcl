@@ -62,7 +62,7 @@ ns_log notice "WHERE $where_etat_ids , owner $customer_id "
 # 3. owner_id is a relation_id (all glossars, owned by the etat_id
 #    which is stored in the relations object_id_one column, with all
 #    terms having a customer_id, equal to the relations object_id_two.     
-#    Question: Should it be possible to to display all glossars
+#    Question: Should it be possible to display all glossars
 #    owned by the relations object_id_two (custommer_id) including all
 #    terms as well?
 
