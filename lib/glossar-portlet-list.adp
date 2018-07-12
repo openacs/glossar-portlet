@@ -1,4 +1,4 @@
-<if @no_perm_p@>
+<if @no_perm_p;literal@ true>
 <p>@no_perm@</p>
 </if>
 <else>
